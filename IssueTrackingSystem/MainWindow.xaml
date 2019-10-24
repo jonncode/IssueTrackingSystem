@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <StackPanel Width="187" HorizontalAlignment="Left" VerticalAlignment="Stretch" Background="#FF2ECC71">
+        <Grid Width="200" HorizontalAlignment="Left" VerticalAlignment="Stretch" Background="#FF2ECC71">
             <Button Background="{x:Null}" FontFamily="Segoe UI Semilight" FontSize="20" Foreground="White" VerticalAlignment="Center" Margin="0 10 0 10"  BorderBrush="{x:Null}">
                 Home
                 <Button.BitmapEffect>
@@ -26,59 +26,42 @@
                     <DropShadowBitmapEffect Color="Black" Direction="320" ShadowDepth="0" Opacity=".8" Softness="10" />
                 </Button.BitmapEffect>
             </Button>
-        </StackPanel>
-        <Grid Height="30" Width="605 " VerticalAlignment="Top" HorizontalAlignment="Right" Background="#FF2C3E50">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*" />
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="0.75*" />
-                <ColumnDefinition Width="0.75*" />
-            </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Semilight">Issue</Label>
-            <Label Grid.Column="1" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Semilight">Created</Label>
-            <Label Grid.Column="2" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Semilight">Assignee</Label>
-            <Label Grid.Column="3" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Semilight">Priority</Label>
-            <Label Grid.Column="4" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Semilight" Margin="0,0,19,0">Status</Label>
         </Grid>
-        <ScrollViewer HorizontalAlignment="Right" Width="605" Background="#FF34495E" HorizontalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="false" Margin="0,30,0,0">
-            <Grid Height="388">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="3*" />
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width=".75*" />
-                    <ColumnDefinition Width=".75*" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition MaxHeight="60"></RowDefinition>
-                    <RowDefinition MaxHeight="60"></RowDefinition>
-                    <RowDefinition MaxHeight="60"></RowDefinition>
-                    <RowDefinition MaxHeight="60"></RowDefinition>
-                    <RowDefinition MaxHeight="60"></RowDefinition>
-                    <RowDefinition MaxHeight="60"></RowDefinition>
-                    <RowDefinition MaxHeight="60"></RowDefinition>
-                    <RowDefinition MaxHeight="60"></RowDefinition>
-                    <RowDefinition MaxHeight="60"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Label Grid.Row="0" Grid.Column="0" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Semilight" Grid.ColumnSpan="2">Fix the sink</Label>
-                <Label Grid.Row="0" Grid.Column="2" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Semilight">2019/10/20</Label>
-                <Label Grid.Row="0" Grid.Column="3" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Semilight">Jonathan</Label>
-                <Label Grid.Row="0" Grid.Column="4" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Semilight">Instant</Label>
-                <Label Grid.Row="0" Grid.Column="5" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Semilight">Instant</Label>
-                <Label Grid.Row="2" Grid.Column="5" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Semilight">Open</Label>
-                <Label Grid.Row="3" Grid.Column="5" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Semilight">Open</Label>
-                <Label Grid.Row="4" Grid.Column="5" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Semilight">Open</Label>
-                <Label Grid.Row="5" Grid.Column="5" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Semilight">Open</Label>
-                <Label Grid.Row="6" Grid.Column="5" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Semilight">Open</Label>
-                <Label Grid.Row="7" Grid.Column="5" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Semilight">Open</Label>
-                <Label Grid.Row="8" Grid.Column="5" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Semilight">Open1</Label>
-                <Label Grid.Row="9" Grid.Column="5" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Semilight">Open2</Label>
-                <Label Grid.Row="10" Grid.Column="5" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Semilight">Open</Label>
-                <Label Grid.Row="11" Grid.Column="5" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Semilight">Open</Label>
-                <Label Grid.Row="12" Grid.Column="5" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Semilight">Open</Label>
-                <Label Grid.Row="12" Grid.Column="5" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Semilight">Open</Label>
-            </Grid>
+        <ScrollViewer HorizontalAlignment="Stretch" Height="Auto" HorizontalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="false">
+            <DataGrid x:Name="DataGridXAML" Height="Auto" Width="Auto" HorizontalGridLinesBrush="LightGray" VerticalGridLinesBrush="LightGray">
+                <DataGrid.Resources>
+                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                        
+                        <Setter Property="BorderThickness" Value="0,0,1,1"/>
+                        <Setter Property="BorderBrush" Value="LightGray"/>
+                        <Setter Property="Padding" Value="12,6,12,6"/>
+                    </Style>
+                    <Style TargetType="{x:Type DataGridCell}">
+                        <Setter Property="Padding" Value="12,6,12,6"/>
+                        <Setter Property="BorderThickness" Value="0.2"/>
+                        <Setter Property="BorderBrush" Value="LightGray"/>
+                        <!-- Following markdown used from StackOverflow-->
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type DataGridCell}">
+                                    <Border Padding="{TemplateBinding Padding}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                                        <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <!-- End of markdown -->
+                    </Style>
+                </DataGrid.Resources>
+                <!-- Column headers -->
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Issue" Binding="{Binding Name}" MinWidth="250" />
+                    <DataGridTextColumn Header="Assignee" Binding="{Binding Assignee}" MinWidth="200" />
+                    <DataGridTextColumn Header="Created" Binding="{Binding Created}" MinWidth="150" />
+                    <DataGridTextColumn Header="Status" Binding="{Binding Status}" MinWidth="60" />
+                    <DataGridTextColumn Header="Priority" Binding="{Binding Priority}" Width="65" />
+                </DataGrid.Columns>
+            </DataGrid>
         </ScrollViewer>
 
     </Grid>

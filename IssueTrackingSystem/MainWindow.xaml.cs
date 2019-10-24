@@ -20,9 +20,41 @@ namespace IssueTrackingSystem
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<Issue> listIssue = new List<Issue>();
         public MainWindow()
         {
             InitializeComponent();
+            listIssue.Add(new Issue("Fix the sink", "ionathan Eriksson", "Open", 1));
+            listIssue.Add(new Issue("Fix the sink", "lonathan Eriksson", "Open", 1));
+            listIssue.Add(new Issue("Fix the sink", "lonathan Eriksson", "Open", 1));
+            listIssue.Add(new Issue("Fix the sink", "ponathan Eriksson", "Open", 1));
+            listIssue.Add(new Issue("Fix the sink", "Jonathan Eriksson", "Open", 1));
+            listIssue.Add(new Issue("Fix the sink", "ponathan Eriksson", "Open", 1));
+            listIssue.Add(new Issue("Fix the sink", "Jonathan Eriksson", "Open", 1));
+            listIssue.Add(new Issue("Fix the sink", "konathan Eriksson", "Open", 1));
+            listIssue.Add(new Issue("Fix the sink", "Jonathan Eriksson", "Open", 1));
+            listIssue.Add(new Issue("Fix the sink", "Jonathan Eriksson", "Open", 1));
+            listIssue.Add(new Issue("Fix the sink", "Jonathan Eriksson", "Open", 1));
+            listIssue.Add(new Issue("Fix the sink", "Jonathan Eriksson", "Open", 1));
+            listIssue.Add(new Issue("Fix the sink", "Jonathan Eriksson", "Open", 1));
+            listIssue.Add(new Issue("Fix the sink", "Jonathan Eriksson", "Open", 1));
+            listIssue.Add(new Issue("Fix the sink", "Jonathan Eriksson", "Open", 1));
+            listIssue.Add(new Issue("Fix the sink", "Jonathan Eriksson", "Open", 1));
+            listIssue.Add(new Issue("Fix the sink", "Jonathan Eriksson", "Open", 1));
+            listIssue.Add(new Issue("Fix the sink", "Jonathan Eriksson", "Open", 1));
+            listIssue.Add(new Issue("Fix the sink", "Jonathan Eriksson", "Open", 1));
+            listIssue.Add(new Issue("Fix the sink", "Jonathan Eriksson", "Open", 1));
+            listIssue.Add(new Issue("Fix the sink", "Jonathan Eriksson", "Open", 1));
+            listIssue.Add(new Issue("Fix the sink", "Jonathan Eriksson", "Open", 1));
+            listIssue.Add(new Issue("Fix the sink", "Jonathan Eriksson", "Open", 1));
+            System.Threading.Thread.Sleep(3000);
+            listIssue.Add(new Issue("Fix the sink", "Jonathan Eriksson", "Open", 1));
+
+            foreach (var item in listIssue)
+            {
+                DataGridXAML.Items.Add(item);
+            }
         }
+            
     }
 }
