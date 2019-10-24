@@ -9,16 +9,18 @@ namespace IssueTrackingSystem
     class Issue
     {
         public string Name { get; set; }
+        public string Description { get; set; }
         public DateTime Created { get; set; }
         public string Assignee { get; set; }
-        public int Priority { get; set; }
+        public string Priority { get; set; }
         public string Status { get; set; }
-        public Issue(string name, string assignee, string status, int priority)
+        public Issue(string name, string description, string assignee, string status, string priority, DateTime created)
         {
             Name = name;
+            Description = Description;
             Assignee = assignee;
             Priority = priority;
-            Created = DateTime.Now;
+            Created = created;
             Status = status;
 
         }

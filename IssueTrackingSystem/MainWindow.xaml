@@ -7,7 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid Width="200" HorizontalAlignment="Left" VerticalAlignment="Stretch" Background="#FF2ECC71">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel VerticalAlignment="Stretch" Background="#E57373">
             <Button Background="{x:Null}" FontFamily="Segoe UI Semilight" FontSize="20" Foreground="White" VerticalAlignment="Center" Margin="0 10 0 10"  BorderBrush="{x:Null}">
                 Home
                 <Button.BitmapEffect>
@@ -26,8 +30,8 @@
                     <DropShadowBitmapEffect Color="Black" Direction="320" ShadowDepth="0" Opacity=".8" Softness="10" />
                 </Button.BitmapEffect>
             </Button>
-        </Grid>
-        <ScrollViewer HorizontalAlignment="Stretch" Height="Auto" HorizontalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="false">
+        </StackPanel>
+        <ScrollViewer HorizontalAlignment="Stretch" Height="Auto" Grid.Column="1" HorizontalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="false">
             <DataGrid x:Name="DataGridXAML" Height="Auto" Width="Auto" HorizontalGridLinesBrush="LightGray" VerticalGridLinesBrush="LightGray">
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
