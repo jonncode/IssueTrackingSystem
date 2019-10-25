@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IssueTrackingSystem
 {
-    class Issue
+    public class Issue
     {
         public string Name { get; set; }
         public string Description { get; set; }

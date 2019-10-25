@@ -32,8 +32,8 @@ namespace IssueTrackingSystem
             string status = cBIssueStatus.Text;
             string priority = cBIssueStatus.Text;
             DateTime time = DateTime.Now;
-            new Issue(name, description, assignee, status, priority, time);
-
+            
+            
         }
     }
 }

@@ -24,7 +24,7 @@
                     <DropShadowBitmapEffect Color="Black" Direction="320" ShadowDepth="0" Opacity=".8" Softness="10" />
                 </Button.BitmapEffect>
             </Button>
-            <Button Background="{x:Null}" FontFamily="Segoe UI Semilight" FontSize="20" Foreground="White" VerticalAlignment="Center" Margin="0 0 0 10" BorderBrush="{x:Null}">
+            <Button Background="{x:Null}" FontFamily="Segoe UI Semilight" FontSize="20" Foreground="White" VerticalAlignment="Center" Margin="0 0 0 10" BorderBrush="{x:Null}" Click="Button_Click">
                 Create Issue
                 <Button.BitmapEffect>
                     <DropShadowBitmapEffect Color="Black" Direction="320" ShadowDepth="0" Opacity=".8" Softness="10" />
