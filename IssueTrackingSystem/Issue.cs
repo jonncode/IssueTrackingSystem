@@ -22,7 +22,6 @@ namespace IssueTrackingSystem
             Priority = priority;
             Created = created;
             Status = status;
-
         }
     }
 }

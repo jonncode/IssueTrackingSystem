@@ -19,6 +19,8 @@ namespace IssueTrackingSystem
     /// </summary>
     public partial class CreateIssue : Window
     {
+        public List<Issue> list { get; set; }
+        public DataGrid DataGridXAML;
         public CreateIssue()
         {
             InitializeComponent();
@@ -32,8 +34,8 @@ namespace IssueTrackingSystem
             string status = cBIssueStatus.Text;
             string priority = cBIssueStatus.Text;
             DateTime time = DateTime.Now;
-            
-            
+            list.Add(new Issue(name, description, assignee, status, priority, time));
+            DataGridXAML.Items.Refresh();
         }
     }
 }

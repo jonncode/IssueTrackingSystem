@@ -26,16 +26,12 @@ namespace IssueTrackingSystem
             InitializeComponent();
 
             listIssue.Add(new Issue("Jon", "l", "l", "l", "l", DateTime.Now));
-            listIssue.Add(new Issue("Jon", "l", "l", "l", "l", DateTime.Now));
-            listIssue.Add(new Issue("Jon", "l", "l", "l", "l", DateTime.Now));
-            listIssue.Add(new Issue("Jon", "l", "l", "l", "l", DateTime.Now));
-            listIssue.Add(new Issue("Jon", "l", "l", "l", "l", DateTime.Now));
-            DataGridXAML.ItemsSource = listIssue;
+            DataGridXAML.ItemsSource = listIssue; 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            CreateIssue Window2 = new CreateIssue();
+            CreateIssue Window2 = new CreateIssue() { DataGridXAML = DataGridXAML, list = listIssue };
             Window2.Show();
         }
     }
