@@ -25,14 +25,13 @@ namespace IssueTrackingSystem
         {
             InitializeComponent();
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string name = tBIssueName.Text;
             string description = new TextRange(rTBIssueDescription.Document.ContentStart, rTBIssueDescription.Document.ContentEnd).Text;
             string assignee = tBIssueAssignee.Text;
             string status = cBIssueStatus.Text;
-            string priority = cBIssueStatus.Text;
+            int priority = Int32.Parse(cBIssuePriority.Text);
             DateTime time = DateTime.Now;
             list.Add(new Issue(name, description, assignee, status, priority, time));
             DataGridXAML.Items.Refresh();

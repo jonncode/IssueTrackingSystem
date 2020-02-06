@@ -212,11 +212,11 @@
             </ComboBox>
             <Label>Priority</Label>
             <ComboBox x:Name="cBIssuePriority" Padding="3" Margin="10 0 10 5">
-                <ComboBoxItem>Low</ComboBoxItem>
-                <ComboBoxItem>Normal</ComboBoxItem>
-                <ComboBoxItem>Medium</ComboBoxItem>
-                <ComboBoxItem>High</ComboBoxItem>
-                <ComboBoxItem>Critical</ComboBoxItem>
+                <ComboBoxItem>1</ComboBoxItem>
+                <ComboBoxItem>2</ComboBoxItem>
+                <ComboBoxItem>3</ComboBoxItem>
+                <ComboBoxItem>4</ComboBoxItem>
+                <ComboBoxItem>5</ComboBoxItem>
             </ComboBox>
             <Button Padding="3" Margin="10 10 10 5" Click="Button_Click">Create Issue</Button>
         </StackPanel>
