@@ -52,14 +52,15 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0" Height="Auto" Width="Auto">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <Label FontSize="25" x:Name="lbIssueName" Grid.Column="0">Jon needs more toilet paper</Label>
-                <Label FontSize="20" x:Name="lbIssueDate" Grid.Column="1">Created: 2-6-2019</Label>
+                <TextBox FontSize="25" x:Name="lbIssueName" Grid.Column="0">Jon needs more toilet paper</TextBox>
+                <TextBox FontSize="20" x:Name="lbIssueDate" Grid.Column="1">Created: 2-6-2019</TextBox>
             </Grid>
             <Grid Grid.Row="1" Height="Auto" Width="Auto">
                 <Grid.ColumnDefinitions>
@@ -67,7 +68,7 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <Label FontSize="20" x:Name="lbIssueAssignee" Grid.Column="0">By: Jonathan F</Label>
+                <TextBox FontSize="20" x:Name="lbIssueAssignee" Grid.Column="0">By: Jonathan F</TextBox>
                 <ComboBox Grid.Column="1" x:Name="cBIssueStatus" Padding="3" Margin="10 0 10 5">
                     <ComboBoxItem>Open</ComboBoxItem>
                     <ComboBoxItem>On Hold</ComboBoxItem>
@@ -81,6 +82,7 @@
                     <ComboBoxItem>5</ComboBoxItem>
                 </ComboBox>
             </Grid>
+
             <TextBox FontSize="18" TextWrapping="Wrap" Margin="10" Grid.Row="2" x:Name="lbIssueDescription">XLurbUnnsQBJoFQTVqsSqwVYNfTjEIY
                 lifCrjPIgyXohVFQlaifvnOzCMjSt
                 GRENHjipcIItuwMGUUCOBx
@@ -91,6 +93,12 @@
                 lKhnHAQUNNscRIPmIi
                 BTRpZNmFMkiNGjK
                 SoIfkwAmCjTWWLAcFGriyee</TextBox>
+            <Grid Grid.Row="3" Height="Auto" Width="Auto">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Button Click="UpdateIssue">Update Issue</Button>
+            </Grid>
         </Grid>
         <ScrollViewer Visibility="Hidden" x:Name="ScrollViewerXAML" HorizontalAlignment="Stretch" Height="Auto" Grid.Column="1" HorizontalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="false">
             <DataGrid x:Name="DataGridXAML" AutoGenerateColumns="False" Height="Auto" Width="Auto" HorizontalGridLinesBrush="LightGray" VerticalGridLinesBrush="LightGray" BeginningEdit="DataGridXAML_BeginningEdit">

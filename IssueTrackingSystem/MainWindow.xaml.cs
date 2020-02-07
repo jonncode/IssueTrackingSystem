@@ -25,6 +25,7 @@ namespace IssueTrackingSystem
         public List<Issue> listIssue = new List<Issue>();
         public string directoryName = @"customers\";
         public string fileName = @"data.txt";
+        public Issue currentIssue;
         public MainWindow()
         {
             InitializeComponent();
@@ -36,6 +37,7 @@ namespace IssueTrackingSystem
                     string jsonString = File.ReadAllText(directoryFile);
                     listIssue = JsonConvert.DeserializeObject<List<Issue>>(jsonString);
                 }
+
                 DataGridXAML.Items.Refresh();
                 DataGridXAML.ItemsSource = listIssue;
             }
@@ -46,7 +48,7 @@ namespace IssueTrackingSystem
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            CreateIssue Window2 = new CreateIssue() { DataGridXAML = DataGridXAML, list = listIssue };
+            CreateIssue Window2 = new CreateIssue() { DataGridXAML = DataGridXAML, list = listIssue }; //Open new window and include list and datagrid
             Window2.Show();
         }
 
@@ -87,14 +89,21 @@ namespace IssueTrackingSystem
             ScrollViewerXAML.Visibility = Visibility.Hidden;
             Home.Visibility = Visibility.Hidden;
             ShowContent.Visibility = Visibility.Visible;
-            Issue item = ((DataGridRow)e.Row).Item as Issue;
-            lbIssueName.Content = item.Name;
-            lbIssueDate.Content = item.Created.ToString("dddd, dd MMMM yyyy HH:mm").ToUpper();
-            lbIssueAssignee.Content = item.Assignee;
-            cBIssuePriority.SelectedItem = item.Priority;
-            cBIssueStatus.SelectedItem = item.Status;
-            lbIssueDescription.Text = item.Description;
-
+            currentIssue = ((DataGridRow)e.Row).Item as Issue;
+            lbIssueName.Text = currentIssue.Name;
+            lbIssueDate.Text = currentIssue.Created.ToString("dddd, dd MMMM yyyy HH:mm").ToUpper();
+            lbIssueAssignee.Text = currentIssue.Assignee;
+            cBIssuePriority.SelectedValue = currentIssue.Priority;
+            cBIssueStatus.SelectedValue = currentIssue.Status;
+            lbIssueDescription.Text = currentIssue.Description;
+        }
+        private void UpdateIssue(object sender, RoutedEventArgs e)
+        {
+            currentIssue.Name = lbIssueName.Text;
+            currentIssue.Assignee = lbIssueAssignee.Text;
+            currentIssue.Priority = Int32.Parse(cBIssuePriority.SelectedValue.ToString());
+            currentIssue.Status = cBIssueStatus.SelectedValue.ToString();
+            currentIssue.Description = lbIssueDescription.Text;
         }
     }
 }
