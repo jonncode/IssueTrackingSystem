@@ -37,7 +37,7 @@
                 </Button.BitmapEffect>
             </Button>
         </StackPanel>
-        <Grid x:Name="Home" Visibility="Hidden" Height="Auto" Width="Auto" Grid.Column="1">
+        <Grid x:Name="Home" Visibility="Visible" Height="Auto" Width="Auto" Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -47,7 +47,7 @@
             <Label Grid.Row="1" x:Name="lbJsonError" Foreground="Red"></Label>
             <TextBox Grid.Row="2" x:Name="tbJsonContent"></TextBox>
         </Grid>
-        <Grid Margin="10" x:Name="ShowContent" Visibility="Visible" Height="Auto" Width="Auto" Grid.Column="1">
+        <Grid Margin="10" x:Name="ShowContent" Visibility="Hidden" Height="Auto" Width="Auto" Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
